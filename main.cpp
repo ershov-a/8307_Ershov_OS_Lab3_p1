@@ -235,10 +235,11 @@ void calculatePi() {
 
     // Заканчиванием замерять время выполнения.
     auto end = std::chrono::high_resolution_clock::now();
-    // Подсчитываем затраченное время.
-    auto time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
     // Досчитываем Пи
     pi = pi / N;
+
+    // Подсчитываем затраченное время.
+    auto time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
     // Выводим результат и затраченное время
     std::cout << "Pi = " << std::setprecision(N) << pi << std::endl
