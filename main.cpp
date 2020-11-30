@@ -233,11 +233,11 @@ void calculatePi() {
     // Ждем пока все потоки не завершат своё выполнение.
     WaitForMultipleObjects(numberOfThreads, threadsArray, true, INFINITE);
 
-    // Заканчиванием замерять время выполнения.
-    auto end = std::chrono::high_resolution_clock::now();
     // Досчитываем Пи
     pi = pi / N;
 
+    // Заканчиванием замерять время выполнения.
+    auto end = std::chrono::high_resolution_clock::now();
     // Подсчитываем затраченное время.
     auto time = std::chrono::duration_cast<std::chrono::milliseconds>(end - start).count();
 
